@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code Arcade - Level Up Your Coding Skills</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;600&family=Outfit:wght@300;400;600;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Firebase SDKs -->
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore-compat.js"></script>
+</head>
+
+<body>
+    <div class="cursor-dot"></div>
+    <div class="cursor-outline"></div>
+
+    <!-- Background Orbs -->
+    <div class="bg-orbs">
+        <div class="orb orb-1"></div>
+        <div class="orb orb-2"></div>
+        <div class="orb orb-3"></div>
+    </div>
+
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <i class="fa-solid fa-gamepad"></i> Code<span class="highlight">Arcade</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#features">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <button id="theme-toggle" class="theme-btn" aria-label="Toggle Theme">
+                    <i class="fa-solid fa-moon"></i>
+                </button>
+                <li><a href="https://www.youtube.com/@CodeArcade-se4rc" target="_blank" class="btn-youtube"><i
+                            class="fa-brands fa-youtube"></i> Subscribe</a></li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section id="home" class="hero">
+            <div class="hero-content reveal">
+                <div class="badge">Innovation & Development</div>
+                <h1 class="glitch" data-text="Building reliable web solutions">Building reliable web solutions for
+                    learning and business.</h1>
+                <p class="tagline">Codearcade is a professional development initiative delivering clean, scalable, and
+                    practical web applications that drive real-world results.</p>
+                <div class="cta-group">
+                    <a href="https://www.youtube.com/@CodeArcade-se4rc" target="_blank" class="btn btn-primary">
+                        <i class="fa-brands fa-youtube"></i> Visit Channel
+                    </a>
+                </div>
+            </div>
+            <div class="hero-visual reveal">
+                <div class="code-window">
+                    <div class="window-header">
+                        <span class="dot red"></span>
+                        <span class="dot yellow"></span>
+                        <span class="dot green"></span>
+                    </div>
+                    <div class="window-body">
+                        <pre><code id="code-block">
+<span style="color: #ff79c6;">const</span> coder = {
+    <span style="color: #8be9fd;">name</span>: <span style="color: #f1fa8c;">"You"</span>,
+    <span style="color: #8be9fd;">skills</span>: [<span style="color: #f1fa8c;">"HTML"</span>, <span style="color: #f1fa8c;">"CSS"</span>, <span style="color: #f1fa8c;">"JS"</span>],
+    <span style="color: #8be9fd;">mission</span>: <span style="color: #f1fa8c;">"Build Cool Stuff"</span>,
+    <span style="color: #8be9fd;">level</span>: <span style="color: #f1fa8c;">"Infinite"</span>
+};
+
+<span style="color: #ff79c6;">function</span> startCoding() {
+    <span style="color: #ff79c6;">return</span> <span style="color: #f1fa8c;">"Welcome to Code Arcade!"</span>;
+}
+                        </code></pre>
+                    </div>
+                </div>
+                <div class="glow-effect"></div>
+            </div>
+        </section>
+
+        <section id="features" class="features reveal">
+            <div class="section-header">
+                <h2>What We Do</h2>
+                <p>Delivering high-performance web solutions for every scale, from student milestones to business
+                    success.</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="icon-box">
+                        <i class="fa-solid fa-briefcase"></i>
+                    </div>
+                    <h3>Real-Time Business Apps</h3>
+                    <p>Custom-built, scalable web solutions designed to automate and grow your small business or
+                        startup.
+                    </p>
+                </div>
+                <div class="feature-card">
+                    <div class="icon-box">
+                        <i class="fa-solid fa-graduation-cap"></i>
+                    </div>
+                    <h3>Academic Excellence</h3>
+                    <p>Meticulously documented and structured projects perfect for demonstrations, learning, and
+                        academic
+                        results.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="icon-box">
+                        <i class="fa-solid fa-code"></i>
+                    </div>
+                    <h3>Custom Development</h3>
+                    <p>Precision-engineered features using the latest tech stacks, tailored exactly to your unique
+                        requirements.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="technologies" class="technologies-section reveal">
+            <div class="section-header">
+                <h2>Our Tech Stack</h2>
+                <p>We leverage industry-leading technologies to build fast, secure, and maintainable applications.</p>
+            </div>
+            <div class="tech-badges">
+                <span class="tech-badge"><i class="fa-brands fa-html5"></i> HTML5</span>
+                <span class="tech-badge"><i class="fa-brands fa-css3-alt"></i> CSS3</span>
+                <span class="tech-badge"><i class="fa-brands fa-js"></i> JavaScript</span>
+                <span class="tech-badge"><i class="fa-brands fa-react"></i> React</span>
+                <span class="tech-badge"><i class="fa-solid fa-fire"></i> Firebase</span>
+                <span class="tech-badge"><i class="fa-solid fa-plug"></i> REST APIs</span>
+                <span class="tech-badge"><i class="fa-brands fa-android"></i> Kotlin</span>
+                <span class="tech-badge"><i class="fa-solid fa-file-code"></i> XML</span>
+                <span class="tech-badge"><i class="fa-brands fa-java"></i> Java</span>
+                <span class="tech-badge"><i class="fa-brands fa-python"></i> Python</span>
+            </div>
+            <p class="tech-description">We focus on stable, maintainable technologies that support long-term growth.</p>
+        </section>
+
+        <section id="why-codearcade" class="why-section reveal">
+            <div class="section-header">
+                <h2>Why Choose Us</h2>
+                <p>Quality, reliability, and precision are the foundations of every line of code we write.</p>
+            </div>
+            <div class="why-content">
+                <ul class="why-list">
+                    <li><i class="fa-solid fa-check-circle"></i> Clean and maintainable code</li>
+                    <li><i class="fa-solid fa-check-circle"></i> Real-world practical solutions</li>
+                    <li><i class="fa-solid fa-check-circle"></i> Transparent development process</li>
+                    <li><i class="fa-solid fa-check-circle"></i> Reliable delivery timelines</li>
+                    <li><i class="fa-solid fa-check-circle"></i> Scalable architecture</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="contact" class="contact-section reveal">
+            <div class="section-header">
+                <h2>Let's Connect</h2>
+                <p>Ready to bring your project to life? Let's discuss how we can help you succeed.</p>
+            </div>
+            <div class="contact-container">
+                <div class="contact-info">
+                    <div class="info-item">
+                        <i class="fa-solid fa-envelope"></i>
+                        <div>
+                            <h4>Email</h4>
+                            <p>codearcade20@gmail.com</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <i class="fa-solid fa-user-tie"></i>
+                        <div>
+                            <h4>Founder</h4>
+                            <p><a href="https://sakthi21a34.github.io/portfolio/" target="_blank"
+                                    style="color: var(--secondary-color); text-decoration: none;">View Profile</a></p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <i class="fa-brands fa-whatsapp"></i>
+                        <div>
+                            <h4>WhatsApp Group</h4>
+                            <p><a href="https://chat.whatsapp.com/CI3Hu0XkLl8BCtGA9LHamN" target="_blank"
+                                    style="color: var(--secondary-color); text-decoration: none;">Join Community</a></p>
+                        </div>
+                    </div>
+                </div>
+                <form id="contact-form" class="contact-form">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" id="name" name="name" required placeholder="Your Name">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" required placeholder="Your Email">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="subject">Subject</label>
+                        <input type="text" id="subject" name="subject" required placeholder="What's this about?">
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" required placeholder="Your Message..."></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary" id="submit-btn">
+                        <span class="btn-text">Send Message</span>
+                        <i class="fa-solid fa-paper-plane"></i>
+                    </button>
+                    <div id="form-status" class="form-status"></div>
+                </form>
+            </div>
+        </section>
+
+
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">Code<span class="highlight">Arcade</span></div>
+            <p>&copy; 2025 Code Arcade. All rights reserved.</p>
+            <div class="social-links">
+                <a href="https://t.me/+H2ay8bImBqcxMGJl" target="_blank" title="Telegram"><i
+                        class="fa-brands fa-telegram"></i></a>
+                <a href="https://www.instagram.com/code_arcade20?igsh=MWJ0Z3ZuNjZ3aHg5bA==" target="_blank"
+                    title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                <a href="https://github.com/Code-Arcade" target="_blank" title="GitHub"><i
+                        class="fa-brands fa-github"></i></a>
+                <a href="https://chat.whatsapp.com/CI3Hu0XkLl8BCtGA9LHamN" target="_blank" title="WhatsApp Group"><i
+                        class="fa-brands fa-whatsapp"></i></a>
+            </div>
+        </div>
+    </footer>
+
+
+
+    <!-- Promo Popup -->
+    <div id="promo-popup" class="promo-popup">
+        <div class="popup-content">
+            <div class="popup-icon">
+                <i class="fa-solid fa-fire-flame-curved"></i>
+            </div>
+            <div class="popup-text">
+                <h3>Limited Time Offer!</h3>
+                <p>Websites start from <strong>₹3000</strong></p>
+                <p>Mobile Apps start from <strong>₹20000</strong></p>
+            </div>
+        </div>
+        <div class="progress-bar"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

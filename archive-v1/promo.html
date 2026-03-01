@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CodeArcade - Student Projects from ₹500 | Premium Development Services</title>
+    <meta name="description"
+        content="Get your college projects done by professionals starting at just ₹500. Web development, mobile apps, AI/ML projects, and more. Fast delivery, premium quality.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800;900&family=Outfit:wght@400;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="promo.css">
+</head>
+
+<body>
+    <!-- Animated Background -->
+    <div class="animated-bg">
+        <div class="gradient-orb orb-1"></div>
+        <div class="gradient-orb orb-2"></div>
+        <div class="gradient-orb orb-3"></div>
+        <div class="particles" id="particles"></div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <!-- CodeArcade Brand -->
+            <div class="brand-logo">
+                <h1 class="brand-name">CodeArcade</h1>
+                <p class="brand-tagline">Your Project Partner</p>
+            </div>
+
+            <div class="badge-container">
+                <span class="badge pulse">🎓 For College Students</span>
+            </div>
+
+            <h2 class="hero-title">
+                <span class="gradient-text">Transform Your Ideas</span>
+                <br>Into Reality
+            </h2>
+
+            <p class="hero-subtitle">
+                Professional project development starting at just <span class="price-highlight">₹500</span>
+                <br>Fast delivery • Premium quality • 100% satisfaction guaranteed
+            </p>
+
+            <div class="cta-buttons">
+                <button class="btn btn-primary" onclick="scrollToProjects()">
+                    <span>Explore Projects</span>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M5 12h14M12 5l7 7-7 7" />
+                    </svg>
+                </button>
+                <button class="btn btn-secondary" onclick="openWhatsApp()">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                        <path
+                            d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+                    </svg>
+                    <span>WhatsApp Now</span>
+                </button>
+            </div>
+
+            <div class="stats-container">
+                <div class="stat-item">
+                    <div class="stat-number">₹500</div>
+                    <div class="stat-label">Starting Price</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">24-48</div>
+                    <div class="stat-label">Hours Delivery</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">100%</div>
+                    <div class="stat-label">Original Work</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Floating Elements -->
+        <div class="floating-elements">
+            <div class="float-card card-1">💻 Web Dev</div>
+            <div class="float-card card-2">📱 Mobile Apps</div>
+            <div class="float-card card-3">🤖 AI/ML</div>
+            <div class="float-card card-4">🎨 UI/UX</div>
+            <div class="float-card card-5">⚡ Fast Delivery</div>
+            <div class="float-card card-6">✨ Premium Quality</div>
+        </div>
+    </section>
+
+    <!-- Video Showcase Section -->
+    <section class="video-showcase" id="showcase">
+        <div class="container">
+            <h2 class="section-title">
+                <span class="gradient-text">See Our Work</span> In Action
+            </h2>
+
+            <div class="video-container">
+                <div class="video-wrapper">
+                    <div class="video-placeholder">
+                        <div class="play-button" onclick="playDemo()">
+                            <svg width="60" height="60" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M8 5v14l11-7z" />
+                            </svg>
+                        </div>
+                        <div class="video-overlay">
+                            <h3>Watch Our Success Stories</h3>
+                            <p>See how CodeArcade helps students deliver quality projects</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="video-features">
+                    <div class="feature-item">
+                        <div class="feature-icon">🚀</div>
+                        <h4>Lightning Fast</h4>
+                        <p>Get your project delivered in 24-48 hours</p>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">💎</div>
+                        <h4>Premium Quality</h4>
+                        <p>Industry-standard code and design</p>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">🎯</div>
+                        <h4>100% Original</h4>
+                        <p>Unique projects tailored to your needs</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="projects-section" id="projects">
+        <div class="container">
+            <h2 class="section-title">
+                Choose Your <span class="gradient-text">Perfect Project</span>
+            </h2>
+            <p class="section-subtitle">Starting from just ₹500 • All technologies covered</p>
+
+            <div class="projects-grid">
+                <!-- Project Card 1 -->
+                <div class="project-card">
+                    <div class="project-icon">🌐</div>
+                    <div class="project-badge">Most Popular</div>
+                    <h3>Web Development</h3>
+                    <p>Responsive websites, portfolios, e-commerce, dashboards</p>
+                    <div class="tech-stack">
+                        <span>HTML</span>
+                        <span>CSS</span>
+                        <span>JavaScript</span>
+                        <span>React</span>
+                    </div>
+                    <div class="price-tag">Starting at <strong>₹500</strong></div>
+                    <button class="btn-card" onclick="openWhatsApp('Web Development')">Get Started</button>
+                </div>
+
+                <!-- Project Card 2 -->
+                <div class="project-card featured">
+                    <div class="project-icon">📱</div>
+                    <div class="project-badge premium">Premium</div>
+                    <h3>Mobile App Development</h3>
+                    <p>Android & iOS apps, cross-platform solutions</p>
+                    <div class="tech-stack">
+                        <span>React Native</span>
+                        <span>Flutter</span>
+                        <span>Android</span>
+                    </div>
+                    <div class="price-tag">Starting at <strong>₹1500</strong></div>
+                    <button class="btn-card" onclick="openWhatsApp('Mobile App')">Get Started</button>
+                </div>
+
+                <!-- Project Card 3 -->
+                <div class="project-card">
+                    <div class="project-icon">🤖</div>
+                    <div class="project-badge">Trending</div>
+                    <h3>AI/ML Projects</h3>
+                    <p>Machine learning models, data analysis, chatbots</p>
+                    <div class="tech-stack">
+                        <span>Python</span>
+                        <span>TensorFlow</span>
+                        <span>PyTorch</span>
+                    </div>
+                    <div class="price-tag">Starting at <strong>₹1200</strong></div>
+                    <button class="btn-card" onclick="openWhatsApp('AI/ML Project')">Get Started</button>
+                </div>
+
+                <!-- Project Card 4 -->
+                <div class="project-card">
+                    <div class="project-icon">💾</div>
+                    <h3>Database Projects</h3>
+                    <p>SQL, MongoDB, Firebase, database design & optimization</p>
+                    <div class="tech-stack">
+                        <span>MySQL</span>
+                        <span>MongoDB</span>
+                        <span>Firebase</span>
+                    </div>
+                    <div class="price-tag">Starting at <strong>₹800</strong></div>
+                    <button class="btn-card" onclick="openWhatsApp('Database Project')">Get Started</button>
+                </div>
+
+                <!-- Project Card 5 -->
+                <div class="project-card">
+                    <div class="project-icon">🎨</div>
+                    <h3>UI/UX Design</h3>
+                    <p>Modern interfaces, prototypes, wireframes, branding</p>
+                    <div class="tech-stack">
+                        <span>Figma</span>
+                        <span>Adobe XD</span>
+                        <span>Sketch</span>
+                    </div>
+                    <div class="price-tag">Starting at <strong>₹700</strong></div>
+                    <button class="btn-card" onclick="openWhatsApp('UI/UX Design')">Get Started</button>
+                </div>
+
+                <!-- Project Card 6 -->
+                <div class="project-card">
+                    <div class="project-icon">⚙️</div>
+                    <h3>Backend Development</h3>
+                    <p>APIs, server setup, authentication, cloud deployment</p>
+                    <div class="tech-stack">
+                        <span>Node.js</span>
+                        <span>Python</span>
+                        <span>Java</span>
+                    </div>
+                    <div class="price-tag">Starting at <strong>₹1000</strong></div>
+                    <button class="btn-card" onclick="openWhatsApp('Backend Development')">Get Started</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials-section">
+        <div class="container">
+            <h2 class="section-title">
+                Why Choose <span class="gradient-text">CodeArcade?</span>
+            </h2>
+
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="feature-icon">⚡</div>
+                    <h3>Fast Delivery</h3>
+                    <p>Get your projects completed within 24-48 hours. We understand deadlines are crucial for students!
+                    </p>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="feature-icon">💎</div>
+                    <h3>Affordable Pricing</h3>
+                    <p>Student-friendly pricing starting at just ₹500. Quality work doesn't have to break the bank!</p>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="feature-icon">🎯</div>
+                    <h3>Expert Developers</h3>
+                    <p>Our team of experienced developers ensures high-quality, industry-standard code for every
+                        project.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Ready to Ace Your Project?</h2>
+                <p>Let CodeArcade help you deliver quality projects on time</p>
+                <div class="cta-buttons">
+                    <button class="btn btn-primary large" onclick="openWhatsApp()">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                            <path
+                                d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+                        </svg>
+                        <span>Contact Us on WhatsApp</span>
+                    </button>
+                    <div class="guarantee-badge">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                            <path d="M9 12l2 2 4-4" />
+                        </svg>
+                        <span>100% Money-Back Guarantee</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <h3>CodeArcade</h3>
+                    <p>Empowering students with premium project solutions</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <a href="https://sakthi21a34.github.io/portfolio/" target="_blank">Founder Portfolio</a>
+                    <a href="https://chat.whatsapp.com/CI3Hu0XkLl8BCtGA9LHamN" target="_blank">WhatsApp Group</a>
+                    <a href="index.html">Home</a>
+                </div>
+                <div class="footer-contact">
+                    <h4>Get in Touch</h4>
+                    <p>📧 codearcade20@gmail.com</p>
+                    <p>📱 <a href="https://chat.whatsapp.com/CI3Hu0XkLl8BCtGA9LHamN" target="_blank"
+                            style="color: inherit; text-decoration: none;">Join WhatsApp Group</a></p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2024 CodeArcade. All rights reserved.</p>
+                <a href="https://www.youtube.com/channel/UC6McNBm7VIaLlwAjKOP5_VA" target="_blank">Developed by
+                    CodeArcade</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="promo.js"></script>
+</body>
+
+</html>

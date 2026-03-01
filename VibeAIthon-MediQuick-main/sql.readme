@@ -1,0 +1,139 @@
+-- MediQuick AI - Supabase Database Schema
+
+-- 1. Use the SQL Editor in Supabase to run these queries
+
+-- User Profiles Table
+CREATE TABLE user_profiles (
+    id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+    name TEXT NOT NULL,
+    age INTEGER NOT NULL,
+    is_minor BOOLEAN DEFAULT FALSE,
+    guardian_name TEXT,
+    guardian_consent BOOLEAN DEFAULT FALSE,
+    created_at TIMESTAMPTZ DEFAULT now()
+);
+
+-- Consent Records Table
+CREATE TABLE consent_records (
+    id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+    user_id UUID REFERENCES user_profiles(id) ON DELETE CASCADE,
+    consent_type TEXT NOT NULL, -- "image_upload", "data_storage", "task_lock"
+    consent_given BOOLEAN DEFAULT FALSE,
+    timestamp TIMESTAMPTZ DEFAULT now()
+);
+
+-- Injury Assessments Table
+CREATE TABLE injury_assessments (
+    id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+    user_id UUID REFERENCES user_profiles(id) ON DELETE CASCADE,
+    image_filename TEXT,
+    symptoms JSONB,
+    ai_analysis JSONB,
+    triage_level TEXT,
+    created_at TIMESTAMPTZ DEFAULT now()
+);
+
+-- Recovery Plans Table
+CREATE TABLE recovery_plans (
+    id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+    assessment_id UUID REFERENCES injury_assessments(id) ON DELETE CASCADE,
+    user_id UUID REFERENCES user_profiles(id) ON DELETE CASCADE,
+    plan_data JSONB,
+    created_at TIMESTAMPTZ DEFAULT now()
+);
+
+-- Tracking Tasks Table
+CREATE TABLE tracking_tasks (
+    id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+    plan_id UUID REFERENCES recovery_plans(id) ON DELETE CASCADE,
+    user_id UUID REFERENCES user_profiles(id) ON DELETE CASCADE,
+    task_type TEXT, -- "medication", "dressing_change", "monitoring", "other"
+    description TEXT,
+    frequency TEXT,
+    due_at TIMESTAMPTZ,
+    completed BOOLEAN DEFAULT FALSE,
+    completed_at TIMESTAMPTZ,
+    created_at TIMESTAMPTZ DEFAULT now()
+);
+
+-- Emergency Contacts Table
+CREATE TABLE emergency_contacts (
+    id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+    user_id UUID REFERENCES user_profiles(id) ON DELETE CASCADE,
+    name TEXT NOT NULL,
+    phone TEXT NOT NULL,
+    relationship TEXT, -- "family", "friend", "doctor", "other"
+    is_primary BOOLEAN DEFAULT FALSE,
+    created_at TIMESTAMPTZ DEFAULT now()
+);
+
+-- Vital Readings Table
+CREATE TABLE vital_readings (
+    id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+    user_id UUID REFERENCES user_profiles(id) ON DELETE CASCADE,
+    reading_type TEXT NOT NULL, -- "blood_pressure", "blood_sugar", etc.
+    value TEXT NOT NULL,
+    unit TEXT NOT NULL,
+    notes TEXT,
+    recorded_at TIMESTAMPTZ DEFAULT now(),
+    created_at TIMESTAMPTZ DEFAULT now()
+);
+
+-- Medication Logs Table
+CREATE TABLE medication_logs (
+    id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+    user_id UUID REFERENCES user_profiles(id) ON DELETE CASCADE,
+    medication_name TEXT NOT NULL,
+    dosage TEXT NOT NULL,
+    scheduled_time TIMESTAMPTZ NOT NULL,
+    taken BOOLEAN DEFAULT FALSE,
+    taken_at TIMESTAMPTZ,
+    missed_reason TEXT,
+    created_at TIMESTAMPTZ DEFAULT now()
+);
+
+-- Health Alerts Table
+CREATE TABLE health_alerts (
+    id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+    user_id UUID REFERENCES user_profiles(id) ON DELETE CASCADE,
+    alert_type TEXT, -- "predictive", "missed_medication", "vital_abnormal"
+    severity TEXT, -- "low", "medium", "high", "critical"
+    title TEXT,
+    message TEXT,
+    ai_insight TEXT,
+    recommendations JSONB, -- Store as JSON array
+    is_read BOOLEAN DEFAULT FALSE,
+    created_at TIMESTAMPTZ DEFAULT now()
+);
+
+-- Task Lock Settings Table
+CREATE TABLE task_lock_settings (
+    user_id UUID PRIMARY KEY REFERENCES user_profiles(id) ON DELETE CASCADE,
+    enabled BOOLEAN DEFAULT FALSE,
+    updated_at TIMESTAMPTZ DEFAULT now()
+);
+
+-- SOS Notifications Table
+CREATE TABLE sos_notifications (
+    id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+    user_id UUID REFERENCES user_profiles(id) ON DELETE CASCADE,
+    contact_id UUID REFERENCES emergency_contacts(id) ON DELETE CASCADE,
+    contact_name TEXT,
+    contact_phone TEXT,
+    message TEXT,
+    sent_at TIMESTAMPTZ DEFAULT now(),
+    status TEXT DEFAULT 'sent'
+);
+
+-- SOS Triggers Table
+CREATE TABLE sos_triggers (
+    id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+    user_id UUID REFERENCES user_profiles(id) ON DELETE CASCADE,
+    triggered_at TIMESTAMPTZ DEFAULT now(),
+    location TEXT,
+    contacts_notified INTEGER DEFAULT 0
+);
+
+
+-- 2. Optional: Insert dummy profile for testing
+-- INSERT INTO user_profiles (name, age, is_minor) VALUES ('Test User', 25, FALSE);

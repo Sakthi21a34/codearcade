@@ -23,7 +23,7 @@ const Hero = () => {
                 <div className="badge inline-block px-4 py-2 bg-[var(--glass-bg)] border border-[var(--glass-border)] rounded-full text-[var(--secondary-color)] text-xs font-semibold mb-6 uppercase tracking-widest">
                     Innovation & Development
                 </div>
-                <h1 className="text-4xl md:text-6xl font-black mb-8 leading-tight tracking-tight text-[var(--text-color)] glitch" data-text="Building reliable web solutions">
+                <h1 className="text-4xl md:text-6xl font-black mb-8 leading-tight tracking-tight text-[var(--text-color)]">
                     Building reliable web solutions for <span className="text-[var(--primary-color)]">learning and business.</span>
                 </h1>
 

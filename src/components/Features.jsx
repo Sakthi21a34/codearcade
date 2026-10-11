@@ -50,16 +50,34 @@ const Features = () => {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ delay: idx * 0.1, duration: 0.6 }}
-                        className="feature-card bg-[var(--glass-bg)] p-12 rounded-3xl border border-[var(--glass-border)] hover:border-[var(--primary-color)] transition-all duration-500 hover:-translate-y-2 group shadow-lg hover:shadow-[var(--primary-color)]/20 relative overflow-hidden"
+                        className="obsidian-card p-8 md:p-10 rounded-2xl relative overflow-hidden group flex flex-col justify-between"
                     >
-                        <div className="icon-box w-16 h-16 bg-[var(--secondary-color)]/20 rounded-2xl flex items-center justify-center mb-8 border border-[var(--glass-border)] group-hover:scale-110 transition-transform duration-500 shadow-lg">
-                            {feature.icon}
+                        {/* Razor 1px Top Highlight Accent */}
+                        <div className="absolute top-0 left-8 right-8 h-[1px] bg-gradient-to-r from-transparent via-white/20 to-transparent group-hover:via-cyan-400/60 transition-colors duration-300" />
+
+                        <div>
+                            <div className="flex items-center justify-between mb-8">
+                                <div className="obsidian-icon-box w-14 h-14 rounded-xl flex items-center justify-center text-[var(--secondary-color)] group-hover:border-cyan-400/40 group-hover:scale-105 transition-all duration-300">
+                                    {feature.icon}
+                                </div>
+                                <span className="text-xs font-semibold text-[var(--text-muted)] tracking-wider">
+                                    0{idx + 1} //
+                                </span>
+                            </div>
+
+                            <h3 className="text-2xl font-bold mb-3 tracking-tight text-[var(--text-color)] group-hover:text-cyan-300 transition-colors duration-200">
+                                {feature.title}
+                            </h3>
+                            <p className="text-[var(--text-muted)] text-base leading-relaxed">
+                                {feature.desc}
+                            </p>
                         </div>
-                        <h3 className="text-2xl font-bold mb-4 text-[var(--text-color)]">{feature.title}</h3>
-                        <p className="text-[var(--text-muted)] text-lg leading-relaxed group-hover:text-[var(--text-color)] transition-colors duration-300">
-                            {feature.desc}
-                        </p>
-                        <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-[var(--primary-color)]/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+
+                        {/* Subtle bottom bevel line */}
+                        <div className="mt-8 pt-4 border-t border-white/[0.04] flex items-center justify-between text-xs font-medium text-[var(--text-muted)]">
+                            <span className="uppercase tracking-wider">Precision Architecture</span>
+                            <span className="w-1.5 h-1.5 rounded-full bg-cyan-400/60 group-hover:bg-cyan-400 group-hover:shadow-[0_0_8px_rgba(6,182,212,0.8)] transition-all"></span>
+                        </div>
                     </motion.div>
                 ))}
             </div>

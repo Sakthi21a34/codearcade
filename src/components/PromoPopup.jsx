@@ -113,7 +113,8 @@ const PromoPopup = () => {
 
                             <button
                                 onClick={handleDismiss}
-                                className="absolute top-4 right-4 text-[var(--text-muted)] hover:text-white transition-colors p-2 hover:bg-white/5 rounded-xl cursor-pointer"
+                                aria-label="Dismiss offer"
+                                className="absolute top-4 right-4 text-[var(--text-muted)] hover:text-[var(--text-color)] transition-colors p-2 hover:bg-[var(--glass-bg)] rounded-xl cursor-pointer"
                             >
                                 <X size={18} />
                             </button>
@@ -123,10 +124,10 @@ const PromoPopup = () => {
                                     <Flame size={28} />
                                 </div>
                                 <div>
-                                    <h3 className="text-lg font-black text-white tracking-tight">Limited Time Offer!</h3>
+                                    <h3 className="text-lg font-black text-[var(--text-color)] tracking-tight">Limited Time Offer!</h3>
                                     <div className="space-y-1 pt-1">
-                                        <p className="text-xs text-gray-300">Websites from <strong className="text-[var(--secondary-color)] text-sm font-extrabold">₹3000</strong></p>
-                                        <p className="text-xs text-gray-300">Mobile Apps from <strong className="text-[var(--primary-color)] text-sm font-extrabold">₹20000</strong></p>
+                                        <p className="text-xs text-[var(--text-muted)]">Websites from <strong className="text-[var(--secondary-color)] text-sm font-extrabold">₹3000</strong></p>
+                                        <p className="text-xs text-[var(--text-muted)]">Mobile Apps from <strong className="text-[var(--primary-color)] text-sm font-extrabold">₹20000</strong></p>
                                     </div>
                                 </div>
                             </div>
@@ -162,7 +163,8 @@ const PromoPopup = () => {
 
                             <button
                                 onClick={() => setIsClaimModalOpen(false)}
-                                className="absolute top-5 right-5 text-[var(--text-muted)] hover:text-white transition-colors p-2 hover:bg-white/5 rounded-xl cursor-pointer"
+                                aria-label="Close modal"
+                                className="absolute top-5 right-5 text-[var(--text-muted)] hover:text-[var(--text-color)] transition-colors p-2 hover:bg-[var(--glass-bg)] rounded-xl cursor-pointer"
                             >
                                 <X size={18} />
                             </button>
@@ -193,7 +195,7 @@ const PromoPopup = () => {
                                         placeholder="Enter your name..."
                                         value={formData.name}
                                         onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                                        className="w-full obsidian-well rounded-xl p-3.5 text-sm text-[var(--text-color)] placeholder:text-slate-500 focus:outline-none"
+                                        className="w-full obsidian-well rounded-xl p-3.5 text-sm text-[var(--text-color)] placeholder:text-[var(--text-muted)] focus:outline-none"
                                     />
 
                                     <button
@@ -235,7 +237,7 @@ const PromoPopup = () => {
                                                 placeholder="Enter 10-digit mobile number..."
                                                 value={formData.phone}
                                                 onChange={handlePhoneChange}
-                                                className={`w-full obsidian-well rounded-xl p-3.5 pr-16 text-sm text-[var(--text-color)] placeholder:text-slate-500 focus:outline-none ${phoneError ? 'border-red-500/70' : ''}`}
+                                                className={`w-full obsidian-well rounded-xl p-3.5 pr-16 text-sm text-[var(--text-color)] placeholder:text-[var(--text-muted)] focus:outline-none ${phoneError ? 'border-red-500/70' : ''}`}
                                             />
                                             <span className="absolute right-3.5 top-1/2 -translate-y-1/2 text-xs font-semibold text-[var(--text-muted)]">
                                                 {formData.phone.length}/10
@@ -250,7 +252,7 @@ const PromoPopup = () => {
                                         <button
                                             type="button"
                                             onClick={() => { setPhoneError(''); setStep(1); }}
-                                            className="px-5 py-3.5 obsidian-well rounded-xl font-bold text-xs text-[var(--text-muted)] hover:text-white cursor-pointer"
+                                            className="px-5 py-3.5 obsidian-well rounded-xl font-bold text-xs text-[var(--text-muted)] hover:text-[var(--text-color)] cursor-pointer"
                                         >
                                             Back
                                         </button>
@@ -291,14 +293,14 @@ const PromoPopup = () => {
                                         placeholder="Describe your website requirement (e.g. E-commerce, Portfolio, College Project)..."
                                         value={formData.websiteType}
                                         onChange={(e) => setFormData({ ...formData, websiteType: e.target.value })}
-                                        className="w-full obsidian-well rounded-xl p-3.5 text-sm text-[var(--text-color)] placeholder:text-slate-500 focus:outline-none resize-none"
+                                        className="w-full obsidian-well rounded-xl p-3.5 text-sm text-[var(--text-color)] placeholder:text-[var(--text-muted)] focus:outline-none resize-none"
                                     />
 
                                     <div className="flex gap-3">
                                         <button
                                             type="button"
                                             onClick={() => setStep(2)}
-                                            className="px-5 py-3.5 obsidian-well rounded-xl font-bold text-xs text-[var(--text-muted)] hover:text-white cursor-pointer"
+                                            className="px-5 py-3.5 obsidian-well rounded-xl font-bold text-xs text-[var(--text-muted)] hover:text-[var(--text-color)] cursor-pointer"
                                         >
                                             Back
                                         </button>

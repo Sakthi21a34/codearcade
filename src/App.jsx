@@ -78,7 +78,7 @@ function App() {
                                 whileInView={{ opacity: 1, scale: 1 }}
                                 viewport={{ once: true }}
                                 transition={{ delay: i * 0.05 }}
-                                className="tech-badge px-5 py-2.5 bg-[#0a0c16] border border-white/[0.08] shadow-[inset_0_1px_0_rgba(255,255,255,0.08)] rounded-xl text-[var(--text-color)] font-bold hover:border-cyan-400/50 hover:bg-[#0f1322] hover:-translate-y-0.5 transition-all cursor-default flex items-center gap-3 text-sm"
+                                className="tech-badge px-5 py-2.5 bg-[var(--glass-bg)] border border-[var(--glass-border)] shadow-sm rounded-xl text-[var(--text-color)] font-bold hover:border-cyan-400/50 hover:bg-[var(--well-bg)] hover:-translate-y-0.5 transition-all cursor-default flex items-center gap-3 text-sm"
                             >
                                 <span className="text-[var(--secondary-color)]">{tech.icon}</span>
                                 {tech.name}
@@ -115,8 +115,8 @@ function App() {
                                 <div className="obsidian-icon-box w-12 h-12 rounded-xl flex items-center justify-center shrink-0 group-hover:scale-105 group-hover:border-cyan-400/40 transition-all">
                                     {item.icon}
                                 </div>
-                                <span className="text-base md:text-lg font-bold text-[var(--text-color)] group-hover:text-cyan-300 transition-colors">{item.text}</span>
-                                <div className="ml-auto w-1.5 h-1.5 rounded-full bg-slate-700 group-hover:bg-cyan-400 transition-colors" />
+                                <span className="text-base md:text-lg font-bold text-[var(--text-color)] group-hover:text-cyan-400 dark:group-hover:text-cyan-300 transition-colors">{item.text}</span>
+                                <div className="ml-auto w-1.5 h-1.5 rounded-full bg-slate-400 dark:bg-slate-700 group-hover:bg-cyan-400 transition-colors" />
                             </motion.div>
                         ))}
                     </div>
@@ -125,7 +125,7 @@ function App() {
                 <Contact />
             </main>
 
-            <footer className="py-16 border-t border-white/[0.08] bg-[#07080e] relative z-10 shadow-[inset_0_1px_0_rgba(255,255,255,0.04)]">
+            <footer className="py-16 border-t border-[var(--glass-border)] bg-[var(--nav-bg)] relative z-10 shadow-[inset_0_1px_0_rgba(255,255,255,0.04)] text-[var(--text-color)]">
                 <div className="max-w-[1200px] mx-auto px-6 text-center space-y-8">
                     <div className="text-2xl font-black flex items-center justify-center gap-3">
                         <img src="/logo.png" alt="Code Arcade Logo" className="w-8 h-8 rounded-lg object-contain" />

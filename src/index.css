@@ -14,6 +14,16 @@
     --font-code: 'Fira Code', monospace;
     --nav-bg: rgba(8, 9, 14, 0.95);
     --orb-opacity: 0.15;
+    /* Card / surface tokens */
+    --card-bg: linear-gradient(180deg, #0f1222 0%, #080a13 100%);
+    --card-bg-solid: #0f1222;
+    --card-border: rgba(255, 255, 255, 0.08);
+    --card-inset: rgba(255, 255, 255, 0.1);
+    --well-bg: #06070d;
+    --well-border: rgba(255, 255, 255, 0.08);
+    --icon-box-bg: linear-gradient(180deg, #131728 0%, #090b14 100%);
+    --icon-box-border: rgba(255, 255, 255, 0.1);
+    --icon-box-inset: rgba(255, 255, 255, 0.12);
 }
 
 [data-theme="light"] {
@@ -21,12 +31,22 @@
     --primary-color: #7c3aed;
     --secondary-color: #0891b2;
     --accent-color: #e11d48;
-    --text-color: #000000;
-    --text-muted: #1e293b;
-    --glass-bg: rgba(255, 255, 255, 0.8);
-    --glass-border: rgba(0, 0, 0, 0.15);
-    --nav-bg: rgba(255, 255, 255, 0.9);
+    --text-color: #0f172a;
+    --text-muted: #475569;
+    --glass-bg: rgba(255, 255, 255, 0.85);
+    --glass-border: rgba(0, 0, 0, 0.12);
+    --nav-bg: rgba(255, 255, 255, 0.95);
     --orb-opacity: 0.05;
+    /* Card / surface tokens — light overrides */
+    --card-bg: linear-gradient(180deg, #ffffff 0%, #f1f5f9 100%);
+    --card-bg-solid: #ffffff;
+    --card-border: rgba(0, 0, 0, 0.1);
+    --card-inset: rgba(0, 0, 0, 0.04);
+    --well-bg: #e2e8f0;
+    --well-border: rgba(0, 0, 0, 0.1);
+    --icon-box-bg: linear-gradient(180deg, #e0e7ff 0%, #ede9fe 100%);
+    --icon-box-border: rgba(0, 0, 0, 0.1);
+    --icon-box-inset: rgba(255, 255, 255, 0.8);
 }
 
 body {
@@ -96,51 +116,51 @@ body {
 
 /* Linear-Style Solid Obsidian Cards with Razor 1px Bevels */
 .obsidian-card {
-    background: linear-gradient(180deg, #0f1222 0%, #080a13 100%);
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    box-shadow: 0 12px 32px -8px rgba(0, 0, 0, 0.8), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    box-shadow: 0 12px 32px -8px rgba(0, 0, 0, 0.2), inset 0 1px 0 var(--card-inset);
     transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .obsidian-card:hover {
     border-color: rgba(6, 182, 212, 0.4);
-    box-shadow: 0 18px 40px -10px rgba(0, 0, 0, 0.9), 0 0 24px -6px rgba(6, 182, 212, 0.18), inset 0 1px 0 rgba(255, 255, 255, 0.18);
+    box-shadow: 0 18px 40px -10px rgba(0, 0, 0, 0.15), 0 0 24px -6px rgba(6, 182, 212, 0.18), inset 0 1px 0 var(--card-inset);
     transform: translateY(-2px);
 }
 
 /* Obsidian Inset Well for Inputs, Badges & Recessed Boxes */
 .obsidian-well {
-    background: #06070d;
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.7);
+    background: var(--well-bg);
+    border: 1px solid var(--well-border);
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.15);
     transition: all 0.2s ease;
 }
 
 .obsidian-well:focus-within, .obsidian-well:focus {
     border-color: rgba(6, 182, 212, 0.6);
-    box-shadow: 0 0 0 1px rgba(6, 182, 212, 0.3), inset 0 2px 4px rgba(0, 0, 0, 0.7);
-    background: #080a14;
+    box-shadow: 0 0 0 1px rgba(6, 182, 212, 0.3), inset 0 2px 4px rgba(0, 0, 0, 0.15);
+    background: var(--card-bg-solid);
 }
 
 /* Obsidian Icon Box */
 .obsidian-icon-box {
-    background: linear-gradient(180deg, #131728 0%, #090b14 100%);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.12);
+    background: var(--icon-box-bg);
+    border: 1px solid var(--icon-box-border);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15), inset 0 1px 0 var(--icon-box-inset);
     transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 /* Ambient Depth & Dynamic Card Utilities */
 .ambient-glow-card {
     position: relative;
-    background: linear-gradient(180deg, #0f1222 0%, #080a13 100%);
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    box-shadow: 0 12px 32px -8px rgba(0, 0, 0, 0.8), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    box-shadow: 0 12px 32px -8px rgba(0, 0, 0, 0.2), inset 0 1px 0 var(--card-inset);
     transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .ambient-glow-card:hover {
     border-color: rgba(6, 182, 212, 0.4);
-    box-shadow: 0 18px 40px -10px rgba(0, 0, 0, 0.9), 0 0 24px -6px rgba(6, 182, 212, 0.18), inset 0 1px 0 rgba(255, 255, 255, 0.18);
+    box-shadow: 0 18px 40px -10px rgba(0, 0, 0, 0.15), 0 0 24px -6px rgba(6, 182, 212, 0.18), inset 0 1px 0 var(--card-inset);
     transform: translateY(-2px);
 }

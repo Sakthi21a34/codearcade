@@ -134,7 +134,7 @@ const ControllerCard = () => {
                 <button
                     type="button"
                     onClick={() => setActiveMode((prev) => (prev === 0 ? modes.length - 1 : prev - 1))}
-                    className="flex items-center gap-1.5 px-3 py-1 bg-[#121324] hover:bg-[#1a1b32] border border-white/10 hover:border-cyan-400/50 rounded-t-xl text-[10px] font-bold text-slate-400 hover:text-cyan-300 transition-all duration-200 shadow-md active:scale-95 cursor-pointer backdrop-blur-md"
+                    className="flex items-center gap-1.5 px-3 py-1 bg-[var(--glass-bg)] hover:bg-[var(--glass-border)] border border-[var(--glass-border)] hover:border-cyan-400/50 rounded-t-xl text-[10px] font-bold text-[var(--text-muted)] hover:text-cyan-500 transition-all duration-200 shadow-md active:scale-95 cursor-pointer backdrop-blur-md"
                     title="Previous mode"
                 >
                     <span className="w-1.5 h-1.5 rounded-full bg-cyan-400 shadow-[0_0_6px_rgba(6,182,212,0.8)]" />
@@ -142,15 +142,15 @@ const ControllerCard = () => {
                 </button>
 
                 {/* Central Status Pill */}
-                <div className="flex items-center gap-1.5 px-3 py-0.5 bg-[#090a14]/80 rounded-full border border-white/10 text-[10px] text-slate-400">
+                <div className="flex items-center gap-1.5 px-3 py-0.5 bg-[var(--glass-bg)] rounded-full border border-[var(--glass-border)] text-[10px] text-[var(--text-muted)]">
                     <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse shadow-[0_0_6px_rgba(52,211,153,0.9)]" />
-                    <span className="text-emerald-400 font-semibold">P1 ONLINE</span>
+                    <span className="text-emerald-500 dark:text-emerald-400 font-semibold">P1 ONLINE</span>
                 </div>
 
                 <button
                     type="button"
                     onClick={() => setActiveMode((prev) => (prev === modes.length - 1 ? 0 : prev + 1))}
-                    className="flex items-center gap-1.5 px-3 py-1 bg-[#121324] hover:bg-[#1a1b32] border border-white/10 hover:border-purple-400/50 rounded-t-xl text-[10px] font-bold text-slate-400 hover:text-purple-300 transition-all duration-200 shadow-md active:scale-95 cursor-pointer backdrop-blur-md"
+                    className="flex items-center gap-1.5 px-3 py-1 bg-[var(--glass-bg)] hover:bg-[var(--glass-border)] border border-[var(--glass-border)] hover:border-purple-400/50 rounded-t-xl text-[10px] font-bold text-[var(--text-muted)] hover:text-purple-500 transition-all duration-200 shadow-md active:scale-95 cursor-pointer backdrop-blur-md"
                     title="Next mode"
                 >
                     <span>R1</span>
@@ -160,9 +160,9 @@ const ControllerCard = () => {
 
             {/* Clean Controller Chassis */}
             <div
-                className="w-full bg-[#0c0e1a]/95 p-6 md:p-8 rounded-[2.2rem] border border-white/10 shadow-2xl backdrop-blur-2xl space-y-5 relative z-10 overflow-hidden transition-all duration-300"
+                className="w-full obsidian-card p-6 md:p-8 rounded-[2.2rem] space-y-5 relative z-10 overflow-hidden transition-all duration-300"
                 style={{
-                    boxShadow: `0 20px 50px -10px ${current.glow}, inset 0 1px 0 rgba(255,255,255,0.08)`
+                    boxShadow: `0 20px 50px -10px ${current.glow}, inset 0 1px 0 var(--card-inset)`
                 }}
             >
                 {/* Clean Center Stage View When Logo is Clicked */}
@@ -173,12 +173,12 @@ const ControllerCard = () => {
                             animate={{ opacity: 1, scale: 1 }}
                             exit={{ opacity: 0, scale: 0.92 }}
                             transition={{ type: "spring", stiffness: 350, damping: 26 }}
-                            className="absolute inset-0 bg-[#070914]/98 backdrop-blur-2xl rounded-[2.2rem] z-30 flex flex-col items-center justify-center p-6 border border-cyan-400/40 text-center space-y-4"
+                            className="absolute inset-0 bg-[var(--card-bg-solid)]/98 backdrop-blur-2xl rounded-[2.2rem] z-30 flex flex-col items-center justify-center p-6 border border-cyan-400/40 text-center space-y-4"
                         >
                             <button
                                 type="button"
                                 onClick={() => setIsInspectingLogo(false)}
-                                className="absolute top-4 right-4 p-2 rounded-full bg-white/10 hover:bg-white/20 text-slate-400 hover:text-white transition-colors cursor-pointer"
+                                className="absolute top-4 right-4 p-2 rounded-full bg-[var(--glass-bg)] hover:bg-[var(--glass-border)] text-[var(--text-muted)] hover:text-[var(--text-color)] transition-colors cursor-pointer"
                                 title="Close"
                             >
                                 <X size={16} />
@@ -191,13 +191,13 @@ const ControllerCard = () => {
                                     transition={{ repeat: Infinity, duration: 16, ease: "linear" }}
                                     className="absolute inset-0 rounded-full border-2 border-dashed border-cyan-400/30"
                                 />
-                                <div className="w-20 h-20 rounded-full bg-[#14172a] border border-cyan-400/60 flex items-center justify-center shadow-[0_0_25px_rgba(6,182,212,0.4)]">
+                                <div className="w-20 h-20 rounded-full bg-[var(--well-bg)] border border-cyan-400/60 flex items-center justify-center shadow-[0_0_25px_rgba(6,182,212,0.4)]">
                                     <motion.div
                                         drag
                                         dragConstraints={{ left: -12, right: 12, top: -12, bottom: -12 }}
                                         dragElastic={0.2}
                                         whileHover={{ scale: 1.05 }}
-                                        className="w-14 h-14 rounded-full bg-gradient-to-br from-[#232845] to-[#0c0d1c] border border-cyan-300 flex items-center justify-center cursor-grab active:cursor-grabbing"
+                                        className="w-14 h-14 rounded-full bg-[var(--glass-bg)] border border-cyan-400 flex items-center justify-center cursor-grab active:cursor-grabbing shadow-md"
                                     >
                                         <img src="/logo.png" alt="Code Arcade Logo" className="w-8 h-8 object-contain pointer-events-none drop-shadow" />
                                     </motion.div>
@@ -205,7 +205,7 @@ const ControllerCard = () => {
                             </div>
 
                             <div className="space-y-1.5 max-w-xs">
-                                <h4 className="text-xl font-bold text-white tracking-tight">Code Arcade</h4>
+                                <h4 className="text-xl font-bold text-[var(--text-color)] tracking-tight">Code Arcade</h4>
                                 <p className="text-xs text-[var(--text-muted)] leading-relaxed">
                                     Building reliable, clean web solutions for learning and business.
                                 </p>
@@ -222,7 +222,7 @@ const ControllerCard = () => {
                                 <button
                                     type="button"
                                     onClick={() => setIsInspectingLogo(false)}
-                                    className="px-4 py-2 bg-white/10 hover:bg-white/15 text-slate-300 rounded-full text-xs font-semibold transition-colors cursor-pointer"
+                                    className="px-4 py-2 bg-[var(--glass-bg)] hover:bg-[var(--glass-border)] text-[var(--text-muted)] hover:text-[var(--text-color)] rounded-full text-xs font-semibold transition-colors cursor-pointer border border-[var(--glass-border)]"
                                 >
                                     Close [ESC]
                                 </button>
@@ -240,13 +240,13 @@ const ControllerCard = () => {
                             onClick={() => setIsInspectingLogo(true)}
                             title="Click to view center"
                         >
-                            <div className="w-13 h-13 rounded-full bg-[#14172a] border border-white/15 group-hover:border-cyan-400/60 p-1 flex items-center justify-center shadow-inner transition-colors">
+                            <div className="w-13 h-13 rounded-full obsidian-well group-hover:border-cyan-400/60 p-1 flex items-center justify-center transition-colors">
                                 <motion.div
                                     drag
                                     dragConstraints={{ left: -8, right: 8, top: -8, bottom: -8 }}
                                     dragElastic={0.15}
                                     whileHover={{ scale: 1.08 }}
-                                    className="w-10 h-10 rounded-full bg-gradient-to-br from-[#232845] to-[#0c0d1c] border border-cyan-400/40 flex items-center justify-center p-1.5 shadow-md cursor-grab active:cursor-grabbing"
+                                    className="w-10 h-10 rounded-full bg-[var(--glass-bg)] border border-cyan-400/40 flex items-center justify-center p-1.5 shadow-md cursor-grab active:cursor-grabbing"
                                 >
                                     <img src="/logo.png" alt="Code Arcade Logo" className="w-6 h-6 object-contain pointer-events-none drop-shadow" />
                                 </motion.div>
@@ -254,23 +254,23 @@ const ControllerCard = () => {
                         </div>
 
                         <div>
-                            <h3 className="text-lg font-bold text-white tracking-tight">Ideas become reality</h3>
+                            <h3 className="text-lg font-bold text-[var(--text-color)] tracking-tight">Ideas become reality</h3>
                             <p className="text-xs text-[var(--text-muted)] font-medium">Tamil Nadu, India</p>
                         </div>
                     </div>
 
-                    <span className="px-3 py-1 bg-cyan-500/10 border border-cyan-400/30 text-cyan-400 text-xs font-black rounded-full uppercase tracking-wider">
+                    <span className="px-3 py-1 bg-cyan-500/10 border border-cyan-400/30 text-cyan-600 dark:text-cyan-400 text-xs font-black rounded-full uppercase tracking-wider">
                         Verified ✓
                     </span>
                 </div>
 
                 {/* Clean 2-Column Metrics */}
-                <div className="grid grid-cols-2 gap-3.5 p-4 bg-white/[0.02] rounded-2xl border border-white/5">
+                <div className="grid grid-cols-2 gap-3.5 p-4 obsidian-well rounded-2xl">
                     <div>
                         <span className="text-[10px] font-bold text-[var(--text-muted)] uppercase tracking-wider block mb-1">
                             Solution Focus
                         </span>
-                        <span className="text-base font-black text-white">
+                        <span className="text-base font-black text-[var(--text-color)]">
                             {current.title}
                         </span>
                     </div>
@@ -279,7 +279,7 @@ const ControllerCard = () => {
                         <span className="text-[10px] font-bold text-[var(--text-muted)] uppercase tracking-wider block mb-1">
                             Quality Standard
                         </span>
-                        <span className="text-xs sm:text-sm font-black text-cyan-400 flex items-center gap-1.5 mt-0.5">
+                        <span className="text-xs sm:text-sm font-black text-cyan-600 dark:text-cyan-400 flex items-center gap-1.5 mt-0.5">
                             <CheckCircle2 size={15} /> {current.standard}
                         </span>
                     </div>
@@ -288,7 +288,7 @@ const ControllerCard = () => {
                 {/* Straightforward Action Deck */}
                 <div className="bg-gradient-to-r from-[#170e2b] to-[#0c1a2c] p-4 sm:p-5 rounded-2xl border border-purple-500/30 flex items-center justify-between shadow-lg">
                     <div>
-                        <span className="text-[11px] font-semibold text-cyan-400 block mb-0.5">
+                        <span className="text-[11px] font-semibold text-cyan-300 block mb-0.5">
                             Direct Solution
                         </span>
                         <div className="text-xl font-black text-white tracking-tight">
@@ -307,7 +307,7 @@ const ControllerCard = () => {
 
                 {/* Clean Trust Note */}
                 <div className="flex items-center justify-center gap-2 text-xs text-[var(--text-muted)] font-medium pt-1">
-                    <ShieldCheck size={15} className="text-cyan-400" />
+                    <ShieldCheck size={15} className="text-cyan-500 dark:text-cyan-400" />
                     <span>100% Reliable & Scalable Architecture</span>
                 </div>
             </div>
